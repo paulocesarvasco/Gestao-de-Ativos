@@ -1,5 +1,6 @@
 package maps;
 
+// A classe movimentacao contém as informações referentes a cada movimentacao do saldo da conta
 public class Movimentacao {
 
 	private Double valor;
