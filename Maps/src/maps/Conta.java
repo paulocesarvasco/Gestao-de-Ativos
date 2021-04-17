@@ -22,17 +22,12 @@ public class Conta {
 	
 	public boolean compra(Double valor) {
 		
-		boolean ok = false;
-		
-		if (this.saldo >= valor) {
-			this.saldo -= valor;
-			Movimentacao movimentacaoAtual= new Movimentacao(valor, "Compra");
-			this.movimentacao.add(movimentacaoAtual);
-			ok = true;
-		} else {
-			ok = false;
+		if (this.saldo < valor) {
+			return false;
 		}
-		
-		return ok;
+		this.saldo -= valor;
+		Movimentacao movimentacaoAtual= new Movimentacao(valor, "Compra");
+		this.movimentacao.add(movimentacaoAtual);
+		return true;
 	}
 }
