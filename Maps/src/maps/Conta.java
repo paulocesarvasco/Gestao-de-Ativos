@@ -6,28 +6,28 @@ import java.util.List;
 public class Conta {
 	
 	private double saldo = 0;
-	private List<Movimentacao> movimentacao = new ArrayList<Movimentacao>();
+	private List<String> movimentacao = new ArrayList<String>();
 
 	public double getSaldo() {
 		return this.saldo;
 	}
 	
-	public boolean venda(Double valor) {
+	public boolean venda(double valor) {
 		
-		Movimentacao movimentacaoAtual= new Movimentacao(valor, "Venda");
 		this.saldo += valor;
-		this.movimentacao.add(movimentacaoAtual);
+		String descricao = "Venda - " + String.valueOf(valor);
+		this.movimentacao.add(descricao);
 		return true;
 	}
 	
-	public boolean compra(Double valor) {
+	public boolean compra(double valor) {
 		
 		if (this.saldo < valor) {
 			return false;
 		}
 		this.saldo -= valor;
-		Movimentacao movimentacaoAtual= new Movimentacao(valor, "Compra");
-		this.movimentacao.add(movimentacaoAtual);
+		String descricao = "Venda - " + String.valueOf(valor);
+		this.movimentacao.add(descricao);
 		return true;
 	}
 }
