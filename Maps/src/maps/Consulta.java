@@ -1,10 +1,14 @@
 package maps;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Consulta {
 
+	// Para cada ativo será gerado um registro que será adicionado a lista de registros
+	// ordenada em ordem alfabética
 	private List<Registro> registros = new ArrayList<Registro>();
 	
 	public boolean criarRegistros(List<Movimentacao> movimentacoes, List<Ativo> ativos) {
@@ -24,6 +28,7 @@ public class Consulta {
 	
 			nomeAtivo = movimentacao.getAtivo().getNome();
 
+			// Se o nome do ativo já estiver presente na lista, passa pro próximo elemento da lista de movimentacoes
 			if (!ativosRegistrados.contains(nomeAtivo)) {
 				quantidadeTotal = contabilizarAtivo(movimentacoes, nomeAtivo);
 				valorMercado = contabilizarValor(ativos, nomeAtivo, quantidadeTotal);
@@ -80,6 +85,8 @@ public class Consulta {
 	
 	private double contabilizarRendimento(List<Ativo> ativos, List<Movimentacao> movimentacoes, String nomeAtivo) {
 		
+		// O preco medio foi contabilizado como a soma do valor de todas a operacoes (compra e venda)
+		// dividido pelo numero total de operacoes
 		double precoMedio = -1, precoMercado = -1, precoTotal = 0;
 		int quantidadeOperacoes = 0;
 		
