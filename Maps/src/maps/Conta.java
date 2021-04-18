@@ -11,6 +11,13 @@ public class Conta {
 	private double saldo = 0;
 	private List<String> movimentacao = new ArrayList<String>();
 
+	public Conta (double valor) {
+		if (valor < 0) {
+			this.saldo = 0;
+		} else {
+			this.saldo = valor;
+		}
+	}
 	public double getSaldo() {
 		return this.saldo;
 	}
@@ -32,11 +39,5 @@ public class Conta {
 		String descricao = "Venda - " + String.valueOf(valor);
 		this.movimentacao.add(descricao);
 		return true;
-	}
-	
-	// Depositar realiza um acréscimo no valor do saldo usado apenas para realizar os testes
-	// de compra e venda dos ativos
-	public void depositar(double valor) {
-		this.saldo += valor;
 	}
 }
