@@ -30,4 +30,10 @@ public class Conta {
 		this.movimentacao.add(descricao);
 		return true;
 	}
+	
+	// Depositar realiza um acréscimo no valor do saldo usado apenas para realizar os testes
+	// de compra e venda dos ativos
+	public void depositar(double valor) {
+		this.saldo += valor;
+	}
 }
