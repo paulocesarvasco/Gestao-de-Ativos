@@ -37,9 +37,17 @@ public class Consulta {
 			}
 		}
 		
+		// Ordena a lista de registro de acordo com o nome dos ativos
+		Collections.sort(registros, new Comparator<Registro>() {
+		      public int compare(Registro registro_1, Registro registro_2) {
+		          return registro_1.getNome().compareTo(registro_2.getNome());
+		      }
+		  });
+
 		return true;
 	}
 	
+	// Soma todas as movimentações tipo compra e subtrai todas movimentaçãoes tipo venda
 	private double contabilizarAtivo(List<Movimentacao> movimentacoes, String nomeAtivo) {
 		
 		double quantidadeTotal = 0;
