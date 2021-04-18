@@ -18,4 +18,8 @@ public class Registro {
 		this.tipo = tipo;
 	}
 	
+	public String getNome() {
+		return this.nome;
+	}
+	
 }
