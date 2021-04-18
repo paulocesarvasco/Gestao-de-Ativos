@@ -57,7 +57,7 @@ public class Consulta {
 	// Método usado apenas para debugar os valores de cada registro
 	public boolean verRegistros() {
 		
-		int index = 0;
+		int index = 1;
 		
 		if (this.registros.isEmpty()) {
 			return false;
@@ -137,7 +137,6 @@ public class Consulta {
 		if (precoMercado < 0) {
 			return precoMercado;
 		}
-		
 		return precoMercado/precoMedio;
 	}
 	
@@ -148,12 +147,16 @@ public class Consulta {
 		for (Movimentacao movimentacao : movimentacoes) {
 			if(movimentacao.getAtivo().getNome().equals(nomeAtivo)) {
 				if (movimentacao.getTipo()) {
-					lucro += movimentacao.getValor();
-				} else {
 					lucro -= movimentacao.getValor();
+				} else {
+					lucro += movimentacao.getValor();
 				}
 			}
 		}
 		return lucro;
+	}
+	
+	public List<Registro> getListaMovimentacoes() {
+		return this.registros;
 	}
 }
