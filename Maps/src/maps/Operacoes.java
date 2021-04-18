@@ -66,5 +66,9 @@ public class Operacoes {
 		
 		return true;
 	}
+	
+	public List<Movimentacao> getMovimentacoes() {
+		return this.movimentacoes;
+	}
 
 }
