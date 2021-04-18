@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Operacoes {
 	
-	private List<Movimentacao> movimentacao = new ArrayList<Movimentacao>();
+	private List<Movimentacao> movimentacoes = new ArrayList<Movimentacao>();
 	
 	public boolean Compra(Conta conta, Ativos listaAtivos, Movimentacao movimentacao) {
 		
@@ -25,7 +25,7 @@ public class Operacoes {
 		
 		// Registro da movimentacao
 		movimentacao.setTipo(true);
-		this.movimentacao.add(movimentacao);
+		this.movimentacoes.add(movimentacao);
 		return true;
 	}
 	
@@ -41,8 +41,8 @@ public class Operacoes {
 		}
 		
 		// Verifica se a quantidade total de ativos é suficiente para movimentacao
-		for (Movimentacao movimentacaoAnterior : this.movimentacao) {
-			if (Objects.equals(movimentacaoAnterior.getAtivo().getNome(), movimentacaoAtual.getAtivo().getNome())) {
+		for (Movimentacao movimentacaoAnterior : this.movimentacoes) {
+			if (movimentacaoAnterior.getAtivo().getNome().equals(movimentacaoAtual.getAtivo().getNome())) {
 				if (movimentacaoAnterior.getTipo()) {
 					quantidadeTotal += movimentacaoAnterior.getQuantidade();
 				} else {
@@ -62,7 +62,7 @@ public class Operacoes {
 			
 		// Registro da movimentacao
 		movimentacaoAtual.setTipo(false);
-		this.movimentacao.add(movimentacaoAtual);
+		this.movimentacoes.add(movimentacaoAtual);
 		
 		return true;
 	}
