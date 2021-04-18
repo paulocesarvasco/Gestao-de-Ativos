@@ -11,7 +11,7 @@ public class Ativos {
 	
 	
 	// Método para criar um novo ativo que verifica se seu tipo é valido
-	public Ativo criarAtivo (String nome, double preco, double quantidade, String tipo) {
+	public Ativo criarAtivo (String nome, double preco, String tipo) {
 		if (Objects.equals(tipo, "RV") || Objects.equals(tipo, "RF") || Objects.equals(tipo, "FUNDO")) {
 			Ativo ativo = new Ativo(nome, preco, tipo);
 			return ativo;
@@ -19,8 +19,8 @@ public class Ativos {
 		return null;
 	}
 	
-	public void addAtivo(Ativo ativo) {
-		this.ativos.add(ativo);
+	public boolean addAtivo(Ativo ativo) {
+		 return this.ativos.add(ativo);
 	}
 	
 	public Ativo buscaAtivo(String nome) {
@@ -60,6 +60,10 @@ public class Ativos {
 		ativo.setNome(novoNome);
 		ativo.setPreco(novoPreco);
 		return true;
+	}
+	
+	public List<Ativo> getAtivos() {
+		return this.ativos;
 	}
 	
 }
