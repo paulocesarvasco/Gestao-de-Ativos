@@ -1,5 +1,7 @@
 package maps;
 
+
+// Classe registro contém as informações básicas para o registro de cada ativo
 public class Registro {
 
 	private String nome;
@@ -22,4 +24,23 @@ public class Registro {
 		return this.nome;
 	}
 	
+	public double getQuantidade() {
+		return this.quantidadeTotal;
+	}
+	
+	public double getValorMercado() {
+		return this.valorMercadoTotal;
+	}
+	
+	public double getRendimento() {
+		return this.rendimento;
+	}
+	
+	public double getLucro() {
+		return this.lucro;
+	}
+	
+	public String getTipo() {
+		return this.tipo;
+	}
 }
