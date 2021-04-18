@@ -3,6 +3,9 @@ package maps;
 import java.util.ArrayList;
 import java.util.List;
 
+// Contam contém como atributo princical o saldo o qual será usado nas operações de compra e
+// venda de ativos, além de uma lista onde será lançadas todas a operações que alteram o valor
+// do saldo
 public class Conta {
 	
 	private double saldo = 0;
@@ -12,7 +15,7 @@ public class Conta {
 		return this.saldo;
 	}
 	
-	public boolean venda(double valor) {
+	public boolean vender(double valor) {
 		
 		this.saldo += valor;
 		String descricao = "Venda - " + String.valueOf(valor);

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+// Ativos contém uma lista de ativos que podem ser manipulados seguindo a métodologia CRUD
 public class Ativos {
 
 	private List<Ativo> ativos = new ArrayList<Ativo>();

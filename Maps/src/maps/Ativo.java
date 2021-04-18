@@ -1,5 +1,6 @@
 package maps;
 
+// Ativo abstrai em uma estrutura as informações que compõem cada ativo
 public class Ativo {
 
 	private String nome;

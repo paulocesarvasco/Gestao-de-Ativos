@@ -3,6 +3,7 @@ package maps;
 import java.util.ArrayList;
 import java.util.List;
 
+// Operações representa as operações que podem ser realizadas com um ativo - compra e venda
 public class Operacoes {
 	
 	private List<Movimentacao> movimentacoes = new ArrayList<Movimentacao>();
@@ -17,7 +18,7 @@ public class Operacoes {
 			return false;
 		}
 		// Laçamento do valor na operação no saldo da conta
-		erro = conta.compra(movimentacao.getValor());
+		erro = conta.comprar(movimentacao.getValor());
 		if (!erro) {
 			return false;
 		}
@@ -54,7 +55,7 @@ public class Operacoes {
 		}
 		
 		// Laçamento do valor na operação no saldo da conta
-		erro = conta.venda(movimentacaoAtual.getValor());
+		erro = conta.vender(movimentacaoAtual.getValor());
 		if (!erro) {
 			return false;
 		}

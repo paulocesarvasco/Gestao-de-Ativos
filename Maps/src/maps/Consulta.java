@@ -22,6 +22,8 @@ public class Consulta {
 		// suas movimentações registradas
 		List<String> ativosRegistrados = new ArrayList<String>();
 		
+		// Sempre que for requisitado uma lista de registros, a lista atual é apagada
+		// e uma nova lista é criada
 		this.registros.clear();
 		
 		for (Movimentacao movimentacao : movimentacoes) {
@@ -49,6 +51,29 @@ public class Consulta {
 		      }
 		  });
 
+		return true;
+	}
+	
+	// Método usado apenas para debugar os valores de cada registro
+	public boolean verRegistros() {
+		
+		int index = 0;
+		
+		if (this.registros.isEmpty()) {
+			return false;
+		}
+
+		System.out.printf("Numero de ativos registrados: %d\n", this.registros.size());
+		for (Registro registro : this.registros) {
+			System.out.printf("	Ativo %d: %s\n", index, registro.getNome());
+			System.out.printf("		Quantidade total: %.2f\n", registro.getQuantidade());
+			System.out.printf("		Valor de mercado: %.2f\n", registro.getValorMercado());
+			System.out.printf("		Rendimento: %.2f\n", registro.getRendimento());
+			System.out.printf("		Lucro: %.2f\n", registro.getLucro());
+			System.out.println("");
+			index++;
+		}
+		
 		return true;
 	}
 	
