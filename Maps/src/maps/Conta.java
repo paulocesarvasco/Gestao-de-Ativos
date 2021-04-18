@@ -20,7 +20,7 @@ public class Conta {
 		return true;
 	}
 	
-	public boolean compra(double valor) {
+	public boolean comprar(double valor) {
 		
 		if (this.saldo < valor) {
 			return false;
