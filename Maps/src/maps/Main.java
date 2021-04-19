@@ -1,7 +1,6 @@
 package maps;
 
 import java.util.List;
-import java.util.Objects;
 
 // Na classe main são realizados os testes das operações implementadas na API
 public class Main {
@@ -126,7 +125,48 @@ public class Main {
 		sucesso = operacoes.Venda(conta, ativos, movimentacao);
 		if (!sucesso) {
 			System.out.println("Falha");
-		}		
+		}
+		
+		System.out.println("Teste dos campos de um registro: ");
+		consulta.criarRegistros(operacoes.getMovimentacoes(), ativos.getAtivos());
+		List<Registro> registros = consulta.getRegistros();
+		Registro registro = registros.get(0);
+		System.out.printf("	Nome ativo: ");
+		if (registro.getNome() == "Petrobras") {
+			System.out.println("Sucesso");
+		} else {
+			System.out.println("Falha");
+		}
+		System.out.printf("	Tipo ativo: ");
+		if (registro.getTipo() == "RV") {
+			System.out.println("Sucesso");
+		} else {
+			System.out.println("Falha");
+		}
+		System.out.printf("	Quantidade total: ");
+		if (registro.getQuantidade() == 3.4) {
+			System.out.println("Sucesso");
+		} else {
+			System.out.println("Falha");
+		}
+		System.out.printf("	Valor de mercado: ");
+		if (registro.getValorMercado() == 90.24) {
+			System.out.println("Sucesso");
+		} else {
+			System.out.println("Falha");
+		}
+		System.out.printf("	Remdimento: ");
+		if (registro.getRendimento() == 0.06) {
+			System.out.println("Sucesso");
+		} else {
+			System.out.println("Falha");
+		}
+		System.out.printf("	Lucro: ");
+		if (registro.getLucro() == 250.0) {
+			System.out.println("Sucesso");
+		} else {
+			System.out.println("Falha");
+		}
 	}
 
 }
