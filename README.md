@@ -1,5 +1,7 @@
 # Maps
 
+Código desenvolvido por Paulo César Vasco de Souza
+
 ## Resumo
 Software desenvolvido para o processo seletivo da Maps Soluções Financeiras.
 Para cada uma das funcionalidades descrita no problema foi criada uma classe com os métodos necessários para a implementação da solução. Abaixo está descrita cada uma delas:
